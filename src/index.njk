@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{{ page.title }}</title>
+    <meta name="description" content="{{ page.description }}">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,700|Varela+Round" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135202127-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+       gtag('config', 'UA-135202127-1');
+    </script>
+</head>
+<body>
+    <div class="row no-gutters wrapper">
+        <section class="profile col-12 col-lg-4">
+            <div class="d-flex flex-column h-100">
+                <h1>Arman Poghosyan</h1>
+                <div class="row no-gutters contacts">
+                {% for contact in contacts %}
+                    <div class="col-4 c-topic">{{ contact.text }}</div>
+                    <div class="col-8 c-value">{{ contact.value | safe }}</div>
+                {% endfor %}
+                </div>
+                <ul class="social">
+                {% for socialLink in social %}
+                    <li><a title="{{ socialLink.title }}" href="{{ socialLink.url }}">{{ socialLink.icon | safe }}</a></li>
+                {% endfor %}
+                </ul>
+            </div>
+        </section>
+        <section class="experience col-12 col-lg-8">
+            <h3>Profile</h3>
+            <p>I'm a software engineer/architect with 10+ years of experience in building, developing and maintaining mid to large scale systems and applications, with working experience in different technology stacks, tools and methodologies. For each individual project I've used most suitable stacks and tools. All development is done using VCS (<strong class="tag">Git</strong>), Project Management (<strong class="tag">Jira</strong>, <strong class="tag">GitLab</strong>) and CI/CD practices (<strong class="tag">Jenkins</strong>, <strong class="tag">GitLab CI</strong>). In recent years I have built IaaS systems for my clients using containerization (<strong class="tag">Docker</strong>), orchestration (<strong class="tag">Kubernetes</strong>), configuration management (<strong class="tag">Ansible</strong>) and provisioning (<strong class="tag">Terraform</strong>, <strong class="tag">Packer</strong>), extensively used cloud providers (<strong class="tag">AWS</strong>, <strong class="tag">Google Cloud</strong>) and setup load balancing (<strong class="tag">Traefik</strong>, <strong class="tag">Nginx</strong>), and infrasctructure and application monitoring systems. Proficient in <strong class="tag">Linux</strong> (OS architecture, security, shell scripting).</p>
+            <h3>Tech Skills</h3>
+            {% for skillSet in skills %}
+            <div class="chips-row">
+                {% for primary in skillSet.primary %}
+                <span class="chips chips-primary">{{ primary }}</span>
+                {% endfor %}
+                {% for secondary in skillSet.secondary %}
+                <span class="chips chips-secondary">{{ secondary }}</span>
+                {% endfor %}
+                {% for optional in skillSet.optional %}
+                <span class="chips chips-optional">{{ optional }}</span>
+                {% endfor %}
+            </div>
+            {% endfor %}
+        </section>
+    </div>
+    <script>
+        const ready = () => {
+            setInterval(highlightRandomTag, 1000);
+        }
+        document.addEventListener("DOMContentLoaded", ready, false);
+        function highlightRandomTag() {
+            const tags = document.getElementsByClassName("tag");
+            const count = tags.length;
+            const random = Math.floor(Math.random()*count);
+            const randomTag = tags[random];
+            randomTag.addClass("hover");
+            setTimeout(() => randomTag.removeClass("hover"), 1500);
+        }
+        HTMLElement.prototype.hasClass = function(cls) {
+            return this.classList.contains(cls);
+            // return !!this.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+        }
+        HTMLElement.prototype.addClass = function(cls) {
+            if (!this.hasClass(cls)) {
+                this.classList.add(cls);
+                // this.className += ` ${cls}`;
+            }
+        }
+        HTMLElement.prototype.removeClass = function(cls) {
+            if (this.hasClass(cls)) {
+                // const reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+                // this.className = this.className.replace(reg, ' ');
+                this.classList.remove(cls);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+# Gitlab syntax highlighting until https://github.com/jneen/rouge/issues/758 is solved
+*.njk gitlab-language=twig
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Automatically normalize line endings for all text-based files
+# https://git-scm.com/docs/gitattributes#_end_of_line_conversion
+
+* text=auto
+
+# For the following file types, normalize line endings to LF on
+# checkin and prevent conversion to CRLF when they are checked out
+# (this is required in order to prevent newline related issues)
+
+*.*      text
+*.css   text
+*.scss  text
+*.less  text
+*.html  text
+*.njk   text
+# https://eslint.org/docs/rules/linebreak-style#using-this-rule-with-version-control-systems
+*.js    text eol=lf
+*.ts    text
+*.json  text
+*.md    text
+*.sh    text eol=lf
+*.txt   text
+*.xml   text
+*.yml   text
+*.php   text
+*.sql   text
+*.py    text
+*.bat   text eol=crlf
+*.svg   text
+
+Dockerfile text
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Explicitly tell git to be aware of binary image files
+# (binary is a macro for -text -diff)
+
+# Generate sourcemaps
+
+*.map   binary
+
+# Image files
+
+*.png   binary
+*.gif   binary
+*.bmp   binary
+*.jpg   binary
+*.jpeg  binary
+*.webp  binary
+
+# Font files
+
+*.eot   binary
+*.ttf   binary
+*.otf   binary
+*.woff  binary
+*.woff2 binary
+
+# Archives
+
+*.gz    binary
+*.zip   binary
+*.7z    binary
+*.bz2   binary
+*.jar   binary
+*.rar   binary
+*.tar   binary
+*.apk   binary
+
+# Documents
+
+*.doc  diff=astextplain
+*.DOC  diff=astextplain
+*.docx diff=astextplain
+*.DOCX diff=astextplain
+*.dot  diff=astextplain
+*.DOT  diff=astextplain
+*.pdf  diff=astextplain
+*.PDF  diff=astextplain
+*.rtf  diff=astextplain
+*.RTF  diff=astextplain
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Exclude files from GitHub's language statistics
+# Specify correct languages
+# https://github.com/github/linguist#using-gitattributes
+
+src/scripts/vendor/* linguist-vendored
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Ignore files when creating archive
+# https://git-scm.com/docs/gitattributes#_creating_an_archive
+
+CONTRIBUTING.md export-ignore
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Avoid merge conflict on these files
+# https://git-scm.com/docs/gitattributes#_performing_a_three_way_merge
+
+CHANGELOG.md    merge=union

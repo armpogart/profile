@@ -1,0 +1,65 @@
+[
+    {
+        "primary": ["Frontend"],
+        "secondary": ["HTML5/CSS3", "Bootstrap", "Materialize"],
+        "optional": ["SASS/SCSS", "Webpack", "Rollup", "Gulp", "NPM scripts"]
+    },
+    {
+        "primary": ["JavaScript"],
+        "secondary": ["Angular", "React", "TDD (Chai, Karma, Jasmine, Protractor)"],
+        "optional": ["TypeScript", "RxJS"]
+    },
+    {
+        "primary": ["NodeJS"],
+        "secondary": ["ExpressJS", "Restify", "NextJS"],
+        "optional": ["WebSockets"]
+    },
+    {
+        "primary": ["PHP"],
+        "secondary": ["Laravel", "Yii", "Symfony"],
+        "optional": ["TDD (PHPUnit, PHPSpec, Codeception)"]
+    },
+    {
+        "primary": ["Python"],
+        "secondary": ["Django"],
+        "optional": ["OpenCV", "NumPy"]
+    },
+    {
+        "primary": ["C#"],
+        "secondary": ["WinForms", "WebAPI MVC"]
+    },
+    {
+        "primary": ["C++"],
+        "secondary": ["std", "mfc"]
+    },
+    {
+        "primary": ["Mobile Development"],
+        "secondary": ["Android (Java)", "iOS (Swift)"],
+        "optional": ["React Native", "NativeScript"]
+    },
+    {
+        "primary": ["Databases"],
+        "secondary": ["MySQL", "PostgreSQL", "MSSQL", "MongoDB", "Cassandra"]
+    },
+    {
+        "primary": ["Web Servers"],
+        "secondary": ["Apache", "Nginx", "IIS"]
+    },
+    {
+        "primary": ["Caching"],
+        "secondary": ["Memcached", "Redis"]
+    },
+    {
+        "primary": ["Message Brokers"],
+        "secondary": ["RabbitMQ", "Apache Kafka"]
+    },
+    {
+        "primary": ["CI/CD"],
+        "secondary": ["Travis CI", "Jenkins", "GitLab CI"]
+    },
+    {
+        "primary": ["IaaS"],
+        "secondary": ["Docker", "Kubernetes", "Load Balancing"],
+        "optional": ["Ansible", "Terraform"]
+    }
+]
