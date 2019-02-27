@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "author": "Arman Poghosyan <armpogart@gmail.com>",
-  "license": "UNLICENSED",
   "private": true,
   "main": "index.js",
   "scripts": {
