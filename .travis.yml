@@ -1,10 +1,7 @@
-sudo: false
 language: node_js
 node_js: "node"
 env:
   - NODE_ENV=production
 cache: yarn
-before_script:
-  - yarn
 script:
   - yarn run build
