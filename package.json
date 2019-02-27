@@ -10,7 +10,7 @@
     "build:sass": "node-sass --recursive src/scss --output dist/css --source-map-embed true --source-map-contents --importer node_modules/node-sass-magic-importer/dist/cli.js",
     "build:postcss": "postcss dist/css/main.css --replace --map",
     "build:nunjucks": "node scripts/nunjucks.js src/**/*.njk --output dist --context data/*.json",
-    "build": "cross-env NODE_ENV=production run-p build:nunjucks build:css"
+    "build": "run-p build:nunjucks build:css"
   },
   "dependencies": {},
   "devDependencies": {
@@ -18,7 +18,6 @@
     "bootstrap": "^4.3.1",
     "chalk": "^2.4.2",
     "chokidar": "^2.1.2",
-    "cross-env": "^5.2.0",
     "css-mqpacker": "^7.0.0",
     "cssnano": "^4.1.10",
     "del-cli": "^1.1.0",
