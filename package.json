@@ -6,11 +6,11 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "build:css": "run-s build:sass build:postcss",
+    "build:css": "npm-run-all build:sass build:postcss",
     "build:sass": "node-sass --recursive src/scss --output dist/css --source-map-embed true --source-map-contents --importer node_modules/node-sass-magic-importer/dist/cli.js",
     "build:postcss": "postcss dist/css/main.css --replace --map",
     "build:nunjucks": "node scripts/nunjucks.js src/**/*.njk --output dist --context data/*.json",
-    "build": "run-p build:nunjucks build:css"
+    "build": "npm-run-all --parallel build:nunjucks build:css"
   },
   "dependencies": {},
   "devDependencies": {
