@@ -3,6 +3,5 @@ language: node_js
 node_js: "node"
 env:
   - NODE_ENV=production
-cache: npm
 script:
   - npm run build
