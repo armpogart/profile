@@ -5,4 +5,4 @@ env:
   - NODE_ENV=production
 cache: yarn
 script:
-  - yarn run build
+  - npm run build
