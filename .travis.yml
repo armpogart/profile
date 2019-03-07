@@ -3,7 +3,6 @@ language: node_js
 node_js: "node"
 env:
   - NODE_ENV=production
-before_install:
-  - ls -la
+install: npm --production=false ci
 script:
   - ls -la
