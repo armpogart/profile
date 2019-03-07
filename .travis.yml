@@ -3,5 +3,7 @@ language: node_js
 node_js: "node"
 env:
   - NODE_ENV=production
+before_install:
+  - ls -la
 script:
-  - npm run build
+  - ls -la
