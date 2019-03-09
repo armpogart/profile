@@ -9,4 +9,4 @@ env:
 cache: yarn
 install: yarn --production=false install
 script:
-  - yarn run build
+  - npm run build
