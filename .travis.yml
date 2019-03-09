@@ -1,8 +1,12 @@
 sudo: false
 language: node_js
 node_js: "node"
+branches:
+  only:
+  - master
 env:
   - NODE_ENV=production
-install: npm --production=false ci
+cache: yarn
+install: yarn --production=false install
 script:
-  - ls -la
+  - yarn run build
